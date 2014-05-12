@@ -1,2 +1,3 @@
-pollster/db.sqlite3
+notepad/db.sqlite3
 .DS_Store
+*.swp
