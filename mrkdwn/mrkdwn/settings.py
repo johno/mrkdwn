@@ -1,13 +1,10 @@
-import os
-
-# Django settings for pollster project.
+# Django settings for mrkdwn project.
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    ('Admin Guy', 'admin_guy@example.com'),
 )
 
 MANAGERS = ADMINS
@@ -15,7 +12,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': os.path.join(BASE_DIR,'db.sqlite3'),                   # Or path to database file if using sqlite3.
+        'NAME': 'development',                  # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
         'USER': '',
         'PASSWORD': '',
@@ -86,7 +83,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = '-56d^php_5%1^11-h)#0(#5t*u5it8^)ruv#2dppouga9u1oza'
+SECRET_KEY = '!r_a-*sty)vuz!36x6!!wh$%ar!9=t!vk@$20t77l3ai(3s460'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -105,10 +102,10 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'pollster.urls'
+ROOT_URLCONF = 'mrkdwn.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'pollster.wsgi.application'
+WSGI_APPLICATION = 'mrkdwn.wsgi.application'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
@@ -127,7 +124,6 @@ INSTALLED_APPS = (
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
-    'polls'
 )
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'

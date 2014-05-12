@@ -6,8 +6,8 @@ from django.conf.urls import patterns, include, url
 
 urlpatterns = patterns('',
     # Examples:
-    # url(r'^$', 'pollster.views.home', name='home'),
-    # url(r'^pollster/', include('pollster.foo.urls')),
+    # url(r'^$', 'mrkdwn.views.home', name='home'),
+    # url(r'^mrkdwn/', include('mrkdwn.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
