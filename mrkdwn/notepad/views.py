@@ -4,9 +4,11 @@ from notepad.models import Note
 
 def index(request):
     note_list = Note.objects.all()
-    context   = {'note_list': note_list }
-
-    return render(request, 'notes/index.html', context)
+    return render(request, 'notes/index.html', {'note_list': note_list })
 
 def detail(request, note_id):
-    return HttpResponse("Hello, world. You're at the notepad detail view for note %s" % note_id)
+    try:
+        note = Note.objects.get(pk=note_id)
+    except Note.DoesNotExist:
+        raise Http404
+    return render(request, 'notes/detail.html', {'note': note})
