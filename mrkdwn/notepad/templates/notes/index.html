@@ -5,11 +5,20 @@
 <div class="p4">
   <h1 class="h1">Notes</h1>
   {% if note_list %}
-    <ul class='mb4 mt4'>
+    <div class='mb4 mt4'>
       {% for note in note_list %}
-        <li><a href="{% url 'notes:detail' note.id %}">{{ note.title }}</a></li>
+        <a href="{% url 'notes:detail' note.id %}">
+          <div class="oh mb1 clearfix">
+            <div class="oh bg-light-gray p1">
+              <p>
+                <span class="h3">{{ note.title }}</span> <br>
+                <span class="mid-gray">{{ note.published_at }}</span>
+              </p>
+            </div>
+          </div>
+        </a>
       {% endfor %}
-    </ul>
+    </div>
   {% else %}
     <p>You don't have any notes.</p>
   {% endif %}
