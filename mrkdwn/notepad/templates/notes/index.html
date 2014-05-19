@@ -1,12 +1,18 @@
-<h1>Notes</h1>
-{% if note_list %}
-  <ul>
-    {% for note in note_list %}
-      <li><a href="{% url 'notes:detail' note.id %}">{{ note.title }}</a></li>
-    {% endfor %}
-  </ul>
-{% else %}
-  <p>You don't have any notes.</p>
-{% endif %}
+{% load staticfiles %}
 
-<a href="{% url 'notes:new' %}">New Note</a>
+<link rel="stylesheet" type="text/css" href="{% static 'notes/style.css' %}" />
+
+<div class="p4">
+  <h1 class="h1">Notes</h1>
+  {% if note_list %}
+    <ul class='mb4 mt4'>
+      {% for note in note_list %}
+        <li><a href="{% url 'notes:detail' note.id %}">{{ note.title }}</a></li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>You don't have any notes.</p>
+  {% endif %}
+
+  <a href="{% url 'notes:new' %}" class="button button-big button-blue">New Note</a>
+</div>

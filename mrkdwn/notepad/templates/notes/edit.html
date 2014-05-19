@@ -1,8 +1,17 @@
-<h1>Edit</h1>
+{% load staticfiles %}
 
-<form action="{% url 'notes:update' note.id %}" method="post">
-  {% csrf_token %}
-  <input type="text" name="title" value="{{ note.title }}" /> <br>
-  <input type="text" name="content" value="{{ note.content }}" /> <br>
-  <input type="submit" value="Update Note" />
-</form>
+<link rel="stylesheet" type="text/css" href="{% static 'notes/style.css' %}" />
+
+<div class="p4">
+  <h1 class="h1">Edit {{ note.title }}.</h1>
+
+  <form action="{% url 'notes:update' note.id %}" method="post" class="form form-light form-stacked">
+    {% csrf_token %}
+    <label for="title">Title</label>
+    <input type="text" name="title" value="{{ note.title }}" class="input" />
+    <label for="content">Content</label>
+    <input type="text" name="content" value="{{ note.content }}" class="input" />
+    <input type="submit" value="Update Note" class="button button-big button-blue" />
+    <a href="{% url 'notes:detail' note.id %}" class="button button-big button-gray">Back</a>
+  </form>
+</div>
