@@ -1,0 +1,8 @@
+<h1>New</h1>
+
+<form action="{% url 'notes:create' %}" method="post">
+  {% csrf_token %}
+  <input type="text" name="title" value="{{ note.title }}" /> <br>
+  <input type="text" name="content" value="{{ note.content }}" /> <br>
+  <input type="submit" value="Create New Note" />
+</form>
