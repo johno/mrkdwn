@@ -1,10 +1,13 @@
 {% load staticfiles %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'notes/style.css' %}" />
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="{% static 'notes/javascripts/showdown.js' %}"></script>
+<script src="{% static 'notes/javascripts/markdown.js' %}"></script>
 
 <div class="p4">
   <h1 class="h1">{{ note.title }}</h1>
-  <div class="h3 mid-gray mt4 mb4">{{ note.content }}</div>
+  <div class="h3 mid-gray mt4 mb4" id="md" data-md="{{ note.content }}"></div>
 
   <a href="{% url 'notes:edit' note.id %}" class="button button-big button-blue">Edit</a>
   <a href="{% url 'notes:index' %}" class="button button-big button-gray">See All</a>
